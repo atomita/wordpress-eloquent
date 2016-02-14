@@ -1,0 +1,20 @@
+{
+    "name": "atomita/wordpress-eloquent",
+    "description": "This is to able to use the Eloquent in the WordPress.",
+    "license": "MIT License",
+    "authors": [
+        {
+            "name": "@",
+            "email": "sleeping.cait.sith+gh@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "illuminate/database": "^5.0.0",
+        "illuminate/events": "^5.0.0",
+        "atomita/php-facade": "^0.1.0"
+    },
+    "autoload": {
+        "classmap": ["src/"]
+    }
+}
