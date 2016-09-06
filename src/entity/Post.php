@@ -36,6 +36,12 @@ class Post extends Model {
 	protected $fillable = [];
 
 
+	protected static function boot(){
+		parent::boot();
+
+		static::observe(__NAMESPACE__ . '\observer\Post');
+	}
+
 	public function metas(){
 		return $this->hasMany(__NAMESPACE__ . '\PostMeta');
 	}
@@ -100,16 +106,3 @@ class Post extends Model {
 	protected function setMimeTypeAttribute($v){ $this->post_mime_type = $v; }
 
 }
-
-
-Post::saving(function($record){
-	if (! $record->isDirty('post_modified_gmt')) {
-		$record->post_modified_gmt =new Carbon(null, 'GMT');
-	}
-});
-
-Post::creating(function($record){
-	if (! $record->isDirty('post_date_gmt')) {
-		$record->post_date_gmt = new Carbon(null, 'GMT');
-	}
-});
