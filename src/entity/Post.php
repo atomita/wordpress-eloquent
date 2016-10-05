@@ -43,7 +43,7 @@ class Post extends Model {
 	}
 
 	public function metas(){
-		return $this->hasMany(__NAMESPACE__ . '\PostMeta');
+		return $this->hasMany(__NAMESPACE__ . '\PostMeta', 'post_id');
 	}
 
 	public function user(){
