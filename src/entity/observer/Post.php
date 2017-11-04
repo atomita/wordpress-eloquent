@@ -2,6 +2,8 @@
 
 namespace atomita\wordpress\eloquent\observer;
 
+use Carbon\Carbon;
+
 class Post
 {
     function saving($record)
